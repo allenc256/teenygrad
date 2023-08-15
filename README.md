@@ -74,8 +74,8 @@ print(loss, w.grad, b.grad)
 
 ### Neural Network
 
-Neural networks can be defined using a simple module API analogous to the
-PyTorch to the `torch.nn` API. For example, the following PyTorch network:
+Neural networks can be defined using a simple module API analogous to PyTorch's
+`torch.nn` API. For example, the following PyTorch network:
 
 ```
 import torch
