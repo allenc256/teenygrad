@@ -91,7 +91,8 @@ model = nn.Sequential(
 )
 ```
 
-Is defined exactly the same way using teenygrad:
+Is defined exactly the same way using teenygrad (just replace `torch.nn` with
+`teenygrad.nn`):
 
 ```
 import teenygrad
