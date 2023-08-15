@@ -8,6 +8,21 @@ This project was heavily inspired by
 [micrograd](https://github.com/karpathy/micrograd) and
 [tinygrad](https://github.com/tinygrad/tinygrad).
 
+## Tensors
+
+The core of this library is the `teenygrad.Tensor` class, which provides a
+tensor implementation analogous to PyTorch's `torch.Tensor`. This tensor
+implementation includes an autograd implementation via its `backward()` method.
+
+For a great treatment of how to think about gradient computation over
+multi-dimensional tensors mathematically, see [Derivatives, Backpropagation,
+and Vectorization](http://cs231n.stanford.edu/handouts/derivatives.pdf) by
+Justin Johnson. Additionally, writing an autograd implementation over tensors
+requires incorporating a few generalizations such as computing the Chain Rule
+over multivariable-functions (e.g., essentially, you just need to sum over the
+partial derivatives with respect to each input) as well special handling for
+numpy-style broadcasting rules.
+
 ## Examples
 
 ### Logistic Regression
