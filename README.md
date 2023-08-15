@@ -17,6 +17,8 @@ we have an initial setup of inputs, outputs, and model parameters for
 logistic regression like so:
 
 ```
+import numpy as np
+
 X_np = np.random.rand(10, 3)            # input data
 y_np = np.random.rand(10)               # output data
 w_np = np.random.rand(3) * 2 - 1        # weight parameters
