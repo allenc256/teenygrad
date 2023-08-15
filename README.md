@@ -20,7 +20,7 @@ and Vectorization](http://cs231n.stanford.edu/handouts/derivatives.pdf) by
 Justin Johnson. Additionally, writing an autograd implementation over tensors
 requires incorporating a few generalizations such as computing the Chain Rule
 over multivariable-functions (e.g., essentially, you just need to sum over the
-partial derivatives with respect to each input) as well special handling for
+partial derivatives with respect to each input) as well as special handling for
 numpy-style broadcasting rules.
 
 ## Examples
