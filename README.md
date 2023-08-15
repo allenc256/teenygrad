@@ -46,7 +46,7 @@ b = torch.tensor(b_np, requires_grad=True)
 y_est = logistic_regression(X, w, b)
 loss = binary_cross_entropy_loss(y, y_est)
 
-# Back-propagation.
+# Compute gradients.
 loss.backward()
 print(loss, w.grad, b.grad)
 ```
@@ -66,7 +66,7 @@ b = teenygrad.Tensor(b_np, requires_grad=True)
 y_est = logistic_regression(X, w, b)
 loss = binary_cross_entropy_loss(y, y_est)
 
-# Back-propagation.
+# Compute gradients.
 loss.backward()
 print(loss, w.grad, b.grad)
 ```
