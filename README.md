@@ -74,6 +74,38 @@ print(loss, w.grad, b.grad)
 
 ### Neural Network
 
-See [`demo.ipynb`](demo.ipynb) for an example of training a 2 layer
-neural network for binary classification using teenygrad.
+Neural networks can be defined using a simple module API analogous to the
+PyTorch to the `torch.nn` API. For example, the following PyTorch network:
 
+```
+import torch
+from torch import nn
+
+model = nn.Sequential(
+    nn.Linear(2, 16),
+    nn.ReLU(),
+    nn.Linear(16, 16),
+    nn.ReLU(),
+    nn.Linear(16, 1),
+    nn.Sigmoid(),
+)
+```
+
+Is defined exactly the same way using teenygrad:
+
+```
+import teenygrad
+from teenygrad import nn
+
+model = nn.Sequential(
+    nn.Linear(2, 16),
+    nn.ReLU(),
+    nn.Linear(16, 16),
+    nn.ReLU(),
+    nn.Linear(16, 1),
+    nn.Sigmoid(),
+)
+```
+
+See [`demo.ipynb`](demo.ipynb) for a full example of training a 2 layer
+neural network for binary classification using teenygrad.
