@@ -51,7 +51,8 @@ loss.backward()
 print(loss, w.grad, b.grad)
 ```
 
-We can compute estimates, loss, and gradients using teenygrad like so:
+And the corresponding code using teenygrad (just replace `torch.tensor` with
+`teenygrad.Tensor`):
 
 ```
 import teenygrad
