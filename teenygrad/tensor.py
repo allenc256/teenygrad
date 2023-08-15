@@ -14,8 +14,8 @@ class Tensor:
     Attributes:
         name: The name of the tensor (for debugging purposes).
         value: The value of the tensor.
-        grad: The current gradient of the tensor relative to the scalar loss
-            function, if it has been calculated. This gradient should have the
+        grad: The current gradient of the tensor (relative to the scalar loss
+            function), if it has been calculated. This gradient should have the
             same shape as the value array. If it has not been calculated, this
             will be set to None.
     """
@@ -23,8 +23,16 @@ class Tensor:
     name: str
     value: np.ndarray
     grad: np.ndarray | None
+
+    # Flag indicating whether a gradient should be computed for the tensor.
     _requires_grad: bool
+
+    # This function takes the "self" tensor as input and back-propagates its
+    # gradient to any ancestor nodes which gradients should be computed for.
+    # This function will be set to None for leaf nodes.
     _backward_fn: Callable[["Tensor"], None] | None
+
+    # The list of ancestor nodes that were used to compose this tensor.
     _ancestors: list["Tensor"]
 
     def __init__(
